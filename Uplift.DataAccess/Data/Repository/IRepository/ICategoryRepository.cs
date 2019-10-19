@@ -1,10 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Uplift.Models;
 
 namespace Uplift.DataAccess.Data.Repository.IRepository
 {
-    interface ICategoryRepository
+    public interface ICategoryRepository : IRepository<Category>
     {
+        IEnumerable<SelectListItem> GetCategoryListForDropdown();
+
+        void Update(Category category);
     }
 }
