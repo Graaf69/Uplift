@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Text;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace Uplift.Models
 {
@@ -15,6 +12,7 @@ namespace Uplift.Models
         public string Name { get; set; }
 
         [Required]
+        [Display(Name = "Frequency Count")]
         public int FrequencyCount { get; set; }
 
     }
