@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using Uplift.DataAccess.Data.Repository.IRepository;
+using Uplift.Models;
 
 namespace Uplift.DataAccess.Data.Repository
 {
@@ -14,11 +15,13 @@ namespace Uplift.DataAccess.Data.Repository
             _db = db;
             Category = new CategoryRepository(_db);
             Frequency = new FrequencyRepository(_db);
+            Service = new ServiceRepository(_db);
         }
 
         public ICategoryRepository Category { get; private set; }
 
-        public IFrequencyRepository Frequency { get; set; }
+        public IFrequencyRepository Frequency { get; private set; }
+        public IServiceRepository Service { get; private set; }
 
         public void Dispose()
         {
