@@ -9,12 +9,13 @@ namespace Uplift.DataAccess.Data.Repository
     public class CategoryRepository : Repository<Category>, ICategoryRepository
     {
         private readonly ApplicationDbContext _db;
+
         public CategoryRepository(ApplicationDbContext db) : base(db)
         {
             _db = db;
         }
 
-        public IEnumerable<SelectListItem> GetCategoryListForDropdown()
+        public IEnumerable<SelectListItem> GetCategoryListForDropDown()
         {
             return _db.Category.Select(i => new SelectListItem()
             {
@@ -25,10 +26,10 @@ namespace Uplift.DataAccess.Data.Repository
 
         public void Update(Category category)
         {
-            var objectFromDatabase = _db.Category.FirstOrDefault(s => s.Id == category.Id);
+            var categoryFromDb = _db.Category.FirstOrDefault(s => s.Id == category.Id);
 
-            objectFromDatabase.Name = category.Name;
-            objectFromDatabase.DisplayOrder = category.DisplayOrder;
+            categoryFromDb.Name = category.Name;
+            categoryFromDb.DisplayOrder = category.DisplayOrder;
 
             _db.SaveChanges();
         }

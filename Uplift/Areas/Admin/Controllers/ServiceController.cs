@@ -35,7 +35,7 @@ namespace Uplift.Areas.Admin.Controllers
             ServiceViewModel = new ServiceViewModel()
             {
                 Service = new Models.Service(),
-                CategoryList = _unitOfWork.Category.GetCategoryListForDropdown(),
+                CategoryList = _unitOfWork.Category.GetCategoryListForDropDown(),
                 FrequencyList = _unitOfWork.Frequency.GetFrequencyListForDropdown()
             };
 
@@ -109,7 +109,7 @@ namespace Uplift.Areas.Admin.Controllers
             }
             else
             {
-                ServiceViewModel.CategoryList = _unitOfWork.Category.GetCategoryListForDropdown();
+                ServiceViewModel.CategoryList = _unitOfWork.Category.GetCategoryListForDropDown();
                 ServiceViewModel.FrequencyList = _unitOfWork.Frequency.GetFrequencyListForDropdown();
                 return View(ServiceViewModel);
             }

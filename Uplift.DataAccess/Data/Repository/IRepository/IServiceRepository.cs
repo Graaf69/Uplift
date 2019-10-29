@@ -4,10 +4,8 @@ using Uplift.Models;
 
 namespace Uplift.DataAccess.Data.Repository.IRepository
 {
-    public interface ICategoryRepository : IRepository<Category>
+    public interface IServiceRepository : IRepository<Service>
     {
-        IEnumerable<SelectListItem> GetCategoryListForDropdown();
-
-        void Update(Category category);
+        void Update(Service service);
     }
 }

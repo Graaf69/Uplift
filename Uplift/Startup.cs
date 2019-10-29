@@ -64,6 +64,7 @@ namespace Uplift
             app.UseStaticFiles();
             app.UseSession();
             app.UseRouting();
+            app.UseCookiePolicy();
 
             app.UseAuthentication();
             app.UseAuthorization();
